@@ -141,7 +141,7 @@ def main(argv):
               joint_angles = np.zeros_like(joint_angles)
               if flags.FLAGS.set_joint_angles:
                 joint_angles = np.array(flags.FLAGS.set_joint_angles, dtype=np.float32)
-              print("Prevented operation on real robot as inverse kinematics solution was not correct")
+              #print("Prevented operation on real robot as inverse kinematics solution was not correct")
 
       # If real-to-sim, update the joint angles based on the actual robot joint angles
       if real_to_sim:

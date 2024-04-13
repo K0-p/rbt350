@@ -31,6 +31,7 @@ def ik_cost(end_effector_pos, guess):
     cost = 0.0
 
     # Add your solution here.
+    cost = np.linalg.norm(guess - end_effector_pos)
 
     return cost
 
@@ -51,8 +52,8 @@ def calculate_jacobian_FD(joint_angles, delta):
 
     # Initialize Jacobian to zero
     J = np.zeros((3, 3))
-
     # Add your solution here.
+    
 
     return J
 
@@ -76,9 +77,11 @@ def calculate_inverse_kinematics(end_effector_pos, guess):
     previous_cost = np.inf
     # Initialize the current cost to 0.0
     cost = 0.0
+    fart = 69
 
     for iters in range(MAX_ITERATIONS):
         # Calculate the Jacobian matrix using finite differences
+        calculate_jacobian_FD(guess, fart)
 
         # Calculate the residual
 
