@@ -8,7 +8,7 @@ UPPER_LEG_OFFSET = 0.10 # length of link 1
 LOWER_LEG_OFFSET = 0.13 # length of link 2
 TOLERANCE = 0.01 # tolerance for inverse kinematics
 PERTURBATION = 0.0001 # perturbation for finite difference method
-MAX_ITERATIONS = 1
+MAX_ITERATIONS = 10
 
 def ik_cost(end_effector_pos, guess):
     """Calculates the inverse kinematics cost.
@@ -105,8 +105,8 @@ def calculate_inverse_kinematics(end_effector_pos, guess):
     previous_cost = np.inf
     # Initialize the current cost to 0.0
     cost = 0.0
-
     for iters in range(MAX_ITERATIONS):
+        print("enter2")
         # Calculate the Jacobian matrix using finite differences
         J = calculate_jacobian_FD(guess, PERTURBATION)
 
